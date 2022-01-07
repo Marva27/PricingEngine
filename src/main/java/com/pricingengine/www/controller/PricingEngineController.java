@@ -34,14 +34,29 @@ public class PricingEngineController {
 		return "success!!!";
 	}
 	
-	@PostMapping(value="/loadFinanceStandardRates")
-	public String loadFinanceStandardRates() {
-		return "success!!!";
+	@PostMapping(value="/loadFinanceStandardRates", consumes= {"multipart/form-data"})
+	public String loadFinanceStandardRates(@RequestParam("source file") MultipartFile uploadedFile) {
+		try {
+			InputStream inputStream = uploadedFile.getInputStream();
+			return pricingService.loadFinanceStandardRates(inputStream);
+		}catch(Exception e) {
+			return "failed to load finance standard rates";
+		}
 	}
 	
 	@PostMapping(value="/loadLeaseStandardRates")
 	public String loadLeaseStandardRates() {
 		return "success!!!";
+	}
+	
+	@PostMapping(value="/loadIncentives", consumes= {"multipart/form-data"}) 
+	public String loadIncentives(@RequestParam("source file") MultipartFile uploadedFile){
+		try {
+			InputStream inputStream = uploadedFile.getInputStream();
+			return pricingService.loadIncentives(inputStream);
+		}catch(Exception e) {
+			return "failed to load incentives";
+		}
 	}
 	
 	@PostMapping(value="/getRatesAndIncentives")

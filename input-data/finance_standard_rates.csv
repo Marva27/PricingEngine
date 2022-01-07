@@ -1,0 +1,16 @@
+﻿sales_class,state,region,term,tier,rate
+new,TX,GU,24,1+,4.97
+new,TX,GU,36,1+,4.97
+new,TX,GU,48,1+,4.97
+new,TX,GU,60,1+,4.97
+new,TX,GU,72,1+,5.97
+new,TX,GU,24,1,5.97
+new,TX,GU,36,1,5.97
+new,TX,GU,48,1,5.97
+new,TX,GU,60,1,5.97
+new,TX,GU,72,1,6.97
+new,TX,GU,24,2,6.97
+new,TX,GU,36,2,6.97
+new,TX,GU,48,2,6.97
+new,TX,GU,60,2,6.97
+new,TX,GU,72,2,7.97

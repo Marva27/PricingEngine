@@ -7,14 +7,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "transactionType", "offerType", "terms", "tier", "incentiveIds", "vehicle", "dealer" })
+@JsonPropertyOrder({ "transactionType", "terms", "tier", "incentiveIds", "vehicle", "dealer" })
 @Generated("jsonschema2pojo")
 public class GetRatesAndIncentivesRequest {
 
 	@JsonProperty("transactionType")
 	private String transactionType;
-	@JsonProperty("offerType")
-	private String offerType;
 	@JsonProperty("terms")
 	private List<Integer> terms = null;
 	@JsonProperty("tier")
@@ -34,16 +32,6 @@ public class GetRatesAndIncentivesRequest {
 	@JsonProperty("transactionType")
 	public void setTransactionType(String transactionType) {
 		this.transactionType = transactionType;
-	}
-
-	@JsonProperty("offerType")
-	public String getOfferType() {
-		return offerType;
-	}
-
-	@JsonProperty("offerType")
-	public void setOfferType(String offerType) {
-		this.offerType = offerType;
 	}
 
 	@JsonProperty("terms")

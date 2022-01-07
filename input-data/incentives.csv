@@ -1,0 +1,7 @@
+﻿incentiveId,incentiveName,incentiveAmount,incentiveType,modelYears,model,modelCodes,regions,states,compatibleWith
+107,Finance Offer,750,cashback,"2021,2022",CX-9,"CX92XA,CX92SA","GU,PA","TX,FL,CA,WA",subvented
+108,Lease Offer,1080,cashback,"2021,2022",CX-9,"CX92XA,CX92SA","GU,PA","TX,FL,CA,WA",subvented
+109,Finance Offer,1500,cashback,"2021,2022",CX-9,"CX92XA,CX92SA","GU,PA","TX,FL,CA,WA",standard
+501,Military,1000,special discount,,,,,,
+502,College Graduate,850,special discount,,,,,,
+503,Loyal Customer,1500,special discount,,,,,,

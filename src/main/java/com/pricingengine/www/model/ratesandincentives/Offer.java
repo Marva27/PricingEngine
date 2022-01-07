@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "term", "rate", "states", "region" })
+@JsonPropertyOrder({ "term", "rate", "states", "region", "cashBackAmount", "specialProgram"})
 @Generated("jsonschema2pojo")
 public class Offer {
 
@@ -15,10 +15,14 @@ public class Offer {
 	private Integer term;
 	@JsonProperty("rate")
 	private Double rate;
+	@JsonProperty("cashBackAmount")
+	private Double cashBackAmount;
 	@JsonProperty("states")
 	private List<String> states = null;
 	@JsonProperty("region")
 	private String region;
+	@JsonProperty("specialProgram")
+	private boolean specialProgram;
 
 	@JsonProperty("term")
 	public Integer getTerm() {
@@ -40,6 +44,16 @@ public class Offer {
 		this.rate = rate;
 	}
 
+	@JsonProperty("cashBackAmount")
+	public Double getCashBackAmount() {
+		return cashBackAmount;
+	}
+
+	@JsonProperty("cashBackAmount")
+	public void setCashBackAmount(Double cashBackAmount) {
+		this.cashBackAmount = cashBackAmount;
+	}
+
 	@JsonProperty("states")
 	public List<String> getStates() {
 		return states;
@@ -58,6 +72,16 @@ public class Offer {
 	@JsonProperty("region")
 	public void setRegion(String region) {
 		this.region = region;
+	}
+	
+	@JsonProperty("specialProgram")
+	public boolean getSpecialProgram() {
+		return specialProgram;
+	}
+
+	@JsonProperty("specialProgram")
+	public void setSpecialProgram(boolean specialProgram) {
+		this.specialProgram = specialProgram;
 	}
 
 }

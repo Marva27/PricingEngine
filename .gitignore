@@ -1,1 +1,7 @@
 /target/
+.classpath
+.project
+*.prefs
+*.md
+bin/mvnw
+*.class
