@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: pricing-engine
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: pricing-engine
+   template:
+      metadata:
+        labels:
+           app: pricing-engine
+      spec:
+         containers:
+            - name: pricing-engine
+              image: moviepopcorn/pricing_engine:0.0.1
+              ports:
+                 - containerPort: 9091
+              env:
+                 - name: MONGO_URL
+                   value: mongodb://mongo-service:27017/mazda
+                 - name: SPRING_PROFILES_ACTIVE
+                   value: test
+              imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: pricing-engine
+spec:
+   type: LoadBalancer
+   selector:
+      app: pricing-engine
+   ports:
+      - port: 9091
+        targetPort: 9091
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: web-allow-external
+spec:
+  podSelector:
+    matchLabels:
+      app: pricing-engine
+  ingress:
+  - {}
