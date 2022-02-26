@@ -1,74 +1,82 @@
 package com.pricingengine.www.model.dealer;
 
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "dealerId", "dealerName", "dealerAddress", "dealerState", "dealerRegion" })
-@Generated("jsonschema2pojo")
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Document(collection="dealer")
 public class Dealer {
-
-	@JsonProperty("dealerId")
+	@Id
+	@Schema(accessMode = Schema.AccessMode.READ_ONLY)
+	private String id;
+	
+	@Schema(example = "34089", description = "Unique id to represent a dealer", required = true)
+	@Indexed(unique = true)
 	private Integer dealerId;
-	@JsonProperty("dealerName")
+	@Schema(example = "Town North Mazda", description = "Name of the dealer", required = true)
 	private String dealerName;
-	@JsonProperty("dealerAddress")
+	@Schema(example = "6900 Preston Rd", description = "Location of the dealer", required = true)
 	private String dealerAddress;
-	@JsonProperty("dealerState")
+	@Schema(example = "Plano", description = "City at which the dealer is located", required = true)
+	private String dealerCity;
+	@Schema(example = "State", description = "State at which the dealer is located", required = true)
 	private String dealerState;
-	@JsonProperty("dealerRegion")
+	@Schema(example = "75080", description = "Zip Code at which the dealer is located", required = true)
+	private Integer dealerZip;
+	@Schema(example = "GU", description = "Region at which the dealer is located", required = true)
 	private String dealerRegion;
-
-	@JsonProperty("dealerId")
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public Integer getDealerId() {
 		return dealerId;
 	}
-
-	@JsonProperty("dealerId")
 	public void setDealerId(Integer dealerId) {
 		this.dealerId = dealerId;
 	}
-
-	@JsonProperty("dealerName")
 	public String getDealerName() {
 		return dealerName;
 	}
-
-	@JsonProperty("dealerName")
 	public void setDealerName(String dealerName) {
 		this.dealerName = dealerName;
 	}
-
-	@JsonProperty("dealerAddress")
 	public String getDealerAddress() {
 		return dealerAddress;
 	}
-
-	@JsonProperty("dealerAddress")
 	public void setDealerAddress(String dealerAddress) {
 		this.dealerAddress = dealerAddress;
 	}
-
-	@JsonProperty("dealerState")
+	public String getDealerCity() {
+		return dealerCity;
+	}
+	public void setDealerCity(String dealerCity) {
+		this.dealerCity = dealerCity;
+	}
 	public String getDealerState() {
 		return dealerState;
 	}
-
-	@JsonProperty("dealerState")
 	public void setDealerState(String dealerState) {
 		this.dealerState = dealerState;
 	}
-
-	@JsonProperty("dealerRegion")
+	public Integer getDealerZip() {
+		return dealerZip;
+	}
+	public void setDealerZip(Integer dealerZip) {
+		this.dealerZip = dealerZip;
+	}
 	public String getDealerRegion() {
 		return dealerRegion;
 	}
-
-	@JsonProperty("dealerRegion")
 	public void setDealerRegion(String dealerRegion) {
 		this.dealerRegion = dealerRegion;
 	}
-
 }

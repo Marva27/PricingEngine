@@ -1,0 +1,32 @@
+[
+    {
+      "id": "620fd95d70871509e7c770ad",
+      "dealerId": 34089,
+      "dealerName": "Town North Mazda",
+      "dealerAddress": "307 Central Expy",
+      "dealerCity": "Richardson",
+      "dealerState": "TX",
+      "dealerZip": 75080,
+      "dealerRegion": "GU"
+    },
+    {
+      "id": "620fd95d70871509e7c770ae",
+      "dealerId": 20337,
+      "dealerName": "Westshore Mazda",
+      "dealerAddress": "2602 N. DALE MABRY HIGHWAY",
+      "dealerCity": "Tampa",
+      "dealerState": "FL",
+      "dealerZip": 33607,
+      "dealerRegion": "GU"
+    },
+    {
+      "id": "620fd95d70871509e7c770af",
+      "dealerId": 42170,
+      "dealerName": "South  Bay Mazda",
+      "dealerAddress": "20626 HAWTHORNE BLVD.",
+      "dealerCity": "Torrance",
+      "dealerState": "CA",
+      "dealerZip": 90503,
+      "dealerRegion": "PA"
+    }
+  ]
