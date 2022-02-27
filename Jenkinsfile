@@ -39,7 +39,7 @@ pipeline {
         				remote.user = 'moviepopcorn'
         				remote.password = "${k8s_password}"
         				remote.allowAnyHosts = true
-        				sshPut remote: remote, from: 'deployment', into: '.'
+        				sshPut remote: remote, from: 'deployment', into: 'pricing'
         			}
 			   }               
 			}   
@@ -56,7 +56,7 @@ pipeline {
         				remote.password = "${k8s_password}"
         				remote.allowAnyHosts = true
         				//sshCommand remote: remote, command: "kubectl apply -f deployment/mongo.yaml"
-        				sshCommand remote: remote, command: "kubectl apply -f deployment/application.yaml"	
+        				sshCommand remote: remote, command: "kubectl apply -f pricing/deployment/application.yaml"	
 					}
 				}	
 			}
